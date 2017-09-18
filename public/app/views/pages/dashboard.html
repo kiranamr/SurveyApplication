@@ -1,0 +1,150 @@
+
+
+  
+  <div class="row">
+ <div class="col-md-12">
+                      <div class="col-md-2">
+
+                      </div>
+                       <div class="col-md-8">
+                       <br>
+                       <br>
+                         <br>
+                       <br>
+<div class="jumbotron">
+
+<form ng-submit="add.regSurvey(regData);">
+  <label>Name:</label>
+  <input type="text" name="Name" class="form-control" placeholder="Enter the Name" ng-model="add.regData.name" required="name is required">
+  <br><br>
+  <b>Select Age:</b><br>
+
+ <label><input type="radio" name="SAge"  ng-model="add.regData.age" value="18-26" required /> 18 - 26 </label><br>
+    <label><input type="radio" name="SAge"  ng-model="add.regData.age" value="26–30" required /> 26 – 30  </label><br>
+     <label><input type="radio" name="SAge"  ng-model="add.regData.age" value="31–40" required /> 31 – 40  </label><br>
+    <label><input type="radio" name="SAge"  ng-model="add.regData.age" value="Above 40" required /> Above 40 </label><br>
+  <br>
+  
+  
+  <b> Select gender:</b><br>
+    <label><input type="radio" name="SGender"  ng-model="add.regData.gender" value="Male" required/> Male </label><br>
+    <label><input type="radio" name="SGender"  ng-model="add.regData.gender" value="Female" required /> Female </label>
+  <br><br>
+
+  <b>Monthly Income :</b><br>
+   <label><input type="radio" name="Income"  ng-model="add.regData.income" value="10000" required /> 10000 </label><br>
+    <label><input type="radio" name="Income"  ng-model="add.regData.income" value="10001 to 20000" required /> 10001 to 20000  </label><br>
+     <label><input type="radio" name="Income"  ng-model="add.regData.income" value="20001 to 30000" required /> 20001 to 30000  </label><br>
+    <label><input type="radio" name="Income"  ng-model="add.regData.income" value="Above 30000" required /> Above 30000 </label><br>
+  <br><br>
+ <b> How often do you eat fruits and berries or drinking fruit juice?</b><br>
+ <label><input type="radio" name="Eat"  ng-model="add.regData.eatAndDrink" value="Daily" required /> Daily </label><br>
+    <label><input type="radio" name="Eat"  ng-model="add.regData.eatAndDrink" value="Twice a week" required /> Twice a week  </label><br>
+     <label><input type="radio" name="Eat"  ng-model="add.regData.eatAndDrink" value="Weekly Once" required /> Weekly Once  </label><br>
+    <label><input type="radio" name="Eat"  ng-model="add.regData.eatAndDrink" value="Others" required /> Others </label><br>
+  <br><br>
+  <b>Approximately how many portions of fresh fruit and vegetables do you eat each day?</b> <br>
+  <label><input type="radio" name="EachDay"  ng-model="add.regData.eatEachDay" value="one or less" required /> one or less </label><br>
+    <label><input type="radio" name="EachDay"  ng-model="add.regData.eatEachDay" value="Two" required /> Two  </label><br>
+     <label><input type="radio" name="EachDay"  ng-model="add.regData.eatEachDay" value="Three" required /> Three  </label><br>
+    <label><input type="radio" name="EachDay"  ng-model="add.regData.eatEachDay" value="Four or more" required /> Four or more </label><br>
+  <br><br>
+   <b>On average, what portion of your weekly food budget is spent on fresh fruits and vegetables?</b><br>
+   <label><input type="radio" name="foodBudget"  ng-model="add.regData.foodBudget" value="0 to 25%" required /> 0 to 25% </label><br>
+    <label><input type="radio" name="foodBudget"  ng-model="add.regData.foodBudget" value="25 to 50%" required /> 25 to 50%</label><br>
+<label><input type="radio" name="foodBudget"  ng-model="add.regData.foodBudget" value="50 to 75%" required /> 50 to 75%  </label><br>
+
+  <br><br>
+  <b>Where do you buy most of your fresh fruits and vegetables?<br></b>
+   <label><input type="radio" name="buyPlace"  ng-model="add.regData.buyPlace" value="Big chain supermarket (Reliance Fresh, More etc)" required />Big chain supermarket (Reliance Fresh, More etc)</label><br>
+    <label><input type="radio" name="buyPlace" ng-model="add.regData.buyPlace" value="Local independent shop or small business" required /> Local independent shop or small business </label><br>
+<label><input type="radio" name="buyPlace"  ng-model="add.regData.buyPlace" value="Farmer's market" required />Farmer's market</label><br>
+<label><input type="radio" name="buyPlace"  ng-model="add.regData.buyPlace" value="Fresh food markets (road side stands)" required />Fresh food markets (road side stands)</label><br>
+<label><input type="radio" name="buyPlace"  ng-model="add.regData.buyPlace" value="Other (please specify)" required />Other (please specify)</label>
+
+<br>
+  <br>
+  <b>Please select the top 3 factors from the list below that motivate you to purchase fresh local fruits?</b>
+  <br>
+  <span ng-repeat="day in selectDays">
+    <input type="checkbox"  ng-model="add.regData.importance[day]"  />
+    <label for="{{day}}">{{day}}</label><br>
+  </span>
+  <br>
+  <br>
+  <b>As an end consumer I, prefer for quality than for price, how would u agree to this statement?</b><br>
+   <label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Strongly Agree" required />Strongly Agree</label><br>
+    <label><input type="radio" name="agree" ng-model="add.regData.agree" value="Agree" required /> Agree </label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Neither agree nor disagree" required />Neither agree nor disagree</label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Disagree" required />Disagree</label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Strongly disagree" required />Strongly disagree</label>
+<br><br>
+<b>Which of the following form of Pomegranate offer you the better benefits as a consumer?</b><br>
+<label><input type="radio" name="betterBenifits"  ng-model="add.regData.betterBenifits" value="Whole Fruit" required />Whole Fruit</label><br>
+    <label><input type="radio" name="betterBenifits" ng-model="add.regData.betterBenifits" value="Arils" required /> Arils </label><br>
+<label><input type="radio" name="betterBenifits"  ng-model="add.regData.betterBenifits" value="Juice" required />Juice</label><br>
+<label><input type="radio" name="betterBenifits"  ng-model="add.regData.betterBenifits" value="Pulp" required />Pulp</label><br>
+<label><input type="radio" name="betterBenifits"  ng-model="add.regData.betterBenifits" value="All" required />All</label>
+<br><br>
+<b>Which type of package you prefer the most?</b><br>
+ 
+
+
+<label><input type="radio" name="package"  ng-model="add.regData.package" value="Canned" required />Canned</label><br>
+<label><input type="radio" name="package"  ng-model="add.regData.package" value="Tetra pack" required />Tetra pack</label><br>
+<label><input type="radio" name="package"  ng-model="add.regData.package" value="Pet bottle" required />Pet bottle</label>
+<br><br>
+<b>Rank the following according to your taste and preference<br></b>
+
+<label><input type="radio" name="preference"  ng-model="add.regData.preference" value="Whole Fruit" required />Whole Fruit</label><br>
+    <label><input type="radio" name="preference" ng-model="add.regData.preference" value="Arils" required /> Arils </label><br>
+<label><input type="radio" name="preference"  ng-model="add.regData.preference" value="Juice" required />Juice</label><br>
+<label><input type="radio" name="preference"  ng-model="add.regData.preference" value="Pulp" required  />Pulp</label><br>
+<label><input type="radio" name="preference"  ng-model="add.regData.preference" value="All" required />All</label><br>
+<label><input type="radio" name="preference"  ng-model="add.regData.preference" value="Others(specify)" required />Others(specify)</label>
+<br> <br>
+<b>Any suggestions for the improvement of the product:<br></b>
+
+
+<textarea name="suggestions" class="form-control" ng-model="add.regData.suggestions" required ></textarea>
+
+<br><br>
+  <label>Address:</label>
+
+  <input type="text" name="Address" class="form-control" placeholder="Enter the Address" ng-model="add.regData.address" required>
+
+  <br>
+  <br>
+ <center><button class="btn btn-primary" type="submit">Submit</button></center> 
+</form>
+<br>
+
+<br>
+<div class="row show-hide-message" ng-show="add.successMsg ">
+<div class="alert alert-success">{{ add.successMsg }}</div>
+  
+</div>
+<br>
+<div class="row show-hide-message" ng-show="add.errorMsg">
+<div class="alert alert-danger">{{ add.errorMsg}}</div>
+
+  
+</div>
+</div>
+</div>
+ <div class="col-md-2">
+ </div>
+ </div>
+ </div>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

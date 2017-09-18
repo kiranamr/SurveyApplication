@@ -1,0 +1,42 @@
+  <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" ng-submit="main.doLogin(loginData);">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="username"  class="form-control" placeholder="Username" ng-model="main.loginData.username" required autofocus>
+                <br>
+                <input type="password" ng-model="main.loginData.password" class="form-control" placeholder="Password" required>
+            
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            </form><!-- /form -->
+           
+            <div class="jumbotron text-center" ng-show="main.loading">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading...</p></div>
+<br>
+<div class="row show-hide-message" ng-show="main.successMsg ">
+<div class="alert alert-success">{{ main.successMsg }}</div>
+	
+</div> 
+<br>
+<div class="row show-hide-message" ng-show="main.errorMsg">
+<div class="alert alert-danger">{{ main.errorMsg}}</div>
+
+	
+</div>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+
+
+
+
+
+
+  
+  
+ 
+
+

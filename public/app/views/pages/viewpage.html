@@ -1,0 +1,71 @@
+
+          
+          
+             <h1>Survey information</h1>
+                  <div   class="scrollbar" id="Style-default">
+                       <div class="force-overflow">
+                          <br><br><br>       
+                            <div style="overflow-x:auto; " >
+                              <center> 
+                                 <table  >
+                                        <thead>
+                                          <tr >
+                                                 <th>Sl No</th>
+                                                <th>Name</th>
+                                                <th>Sex</th>
+                                                <th>Monthly Income </th>
+                                                <th>How often do you eat fruits and berries or drinking fruit juice?</th>
+                                                <th>Approximately how many portions of fresh fruit and vegetables do you eat each day? </th>
+                                                <th>On average, what portion of your weekly food budget is spent on fresh fruits and vegetables?
+													</th>
+													<th>Where do you buy most of your fresh fruits and vegetables?</th>
+													<th>Please select the top 3 factors from the list below that motivate you to purchase fresh local fruits?</th>
+													<th>As an end consumer I, prefer for quality than for price, how would u agree to this statement?</th>
+													<th>Which of the following form of Pomegranate offer you the better benefits as a consumer?
+</th>
+<th>Which type of package you prefer the most?</th>
+<th>Rank the following according to your taste and preference</th>
+<th>Any suggestions for the improvement of the product</th>
+<th>Address</th>
+                                               
+                                          </tr>
+                                        </thead>
+
+                                          <tbody>                         
+                                           <tr style="width: 200px"  ng-repeat="survey in surveys" > 
+                                              <td>{{$index+1}}</td>
+                                              <td>{{survey.Name}}</td>
+                                              <td>{{survey.gender}}</td>
+                                              <td>{{survey.income}}</td>
+                                               <td>{{survey.eatAndDrink}}</td>
+                                                <td>{{survey.eatEachDay}}</td>
+                                                 <td>{{survey.foodBudget}}</td>
+                                                  <td>{{survey.buyPlace}}
+                                                  </td>
+                                                  <td>{{survey.importance}}</td>
+                                                   <td>{{survey.agree}}</td>
+                                                    <td>{{survey.betterBenifits}}</td>
+                                                     <td>{{survey.package}}</td>
+                                                      <td>{{survey.preference}}</td>
+                                                       <td>{{survey.suggestions}}</td>
+                                                        <td>{{survey.address}}</td>
+                                                        
+                                             
+                                             
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                     </center>
+                                     <br>
+                                     <br>
+
+                                   <center> <a href="http://localhost:3000/api/downloads"><h4>download this page here</h4> </a></center> 
+                                  </div>
+                                </div>
+                            </div>
+                         <br><br>
+           
+    
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div></div>
+
