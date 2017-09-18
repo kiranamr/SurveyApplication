@@ -24,7 +24,7 @@ app.use('/api',appRoutes);
 
 
 
-mongoose.connect('mongodb://localhost:27017/SurveyDb',function(err)
+mongoose.connect('mongodb://Admin:Admin@ds141464.mlab.com:41464/surveyapp',function(err)
 	{
 		if(err)
 		{
