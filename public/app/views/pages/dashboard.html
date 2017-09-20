@@ -10,6 +10,153 @@
                        <br>
                        <br>
                          <br>
+
+  
+  <div class="row">
+ <div class="col-md-12">
+                      <div class="col-md-2">
+
+                      </div>
+                       <div class="col-md-8">
+                       
+                         <br>
+                       <br>
+<div class="jumbotron">
+
+<form ng-submit="add.regSurvey(regData);">
+  
+
+  <br>
+  <b>1.Are you aware of Online Grocery Market?</b><br>
+
+ <label><input type="radio" name="aware"  ng-model="add.regData.aware" value="Yes" required />Yes </label><br>
+  <label><input type="radio" name="aware"  ng-model="add.regData.aware" value="No" required />No </label><br>
+  <br>
+  
+  
+  <b> 2.what is your opinion on free Door Delivery?</b><br>
+    <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="Good" required/> Good  </label><br>
+    <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="Bad" required /> Bad </label><br>
+      <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="Very much need" required/> Very much need  </label><br>
+    <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="None" required /> None </label>
+  <br><br>
+
+  <b>3.Would you like to prefer such kind of service / give a chance to such kind of service?</b><br>
+   <label><input type="radio" name="prefer"  ng-model="add.regData.prefer" value="Yes" required /> Yes </label><br>
+    <label><input type="radio" name="prefer"  ng-model="add.regData.prefer" value="No" required /> No </label>
+    
+  <br><br>
+  <b>4.How much do you spend monthly Grocery?</b> <input type="text" name="spend" ng-model="add.regData.spend" required ><br>
+  <br>
+ <b>5.How many times would you like to recieve such service in a month ?</b><br>
+ <label><input type="radio" name="recieve"  ng-model="add.regData.recieve" value="Monthly once" required /> Monthly once </label><br>
+    <label><input type="radio" name="recieve"  ng-model="add.regData.recieve" value="Monthly twice" required /> Monthly twice </label><br>
+   
+  <br><br>
+  <b>6.What is your opinion on farm fresh Fruits and Vegetables door delivery?</b> <br>
+  <label><input type="radio" name="farmfresh"  ng-model="add.regData.farmfresh" value="Helpful" required />Helpful</label><br>
+    <label><input type="radio" name="farmfresh"  ng-model="add.regData.farmfresh" value="Not helpful" required /> Not helpful </label><br>
+    <br>
+  
+   <b>7.How often do you buy fruits and vegetables?</b><br>
+   <label><input type="radio" name="buy"  ng-model="add.regData.buy" value="Weekly once" required />Weekly once</label><br>
+    <label><input type="radio" name="buy"  ng-model="add.regData.buy" value="Weekly twice" required /> Weekly twice</label>
+
+
+  <br><br>
+  <b>8.On average, what portion of your weekly food budget is spent on flesh fruits and vegetables?<br></b>
+   <label><input type="radio" name="average"  ng-model="add.regData.average" value="0-25%" required />0-25%</label><br>
+    <label><input type="radio" name="average" ng-model="add.regData.average" value="25-50%" required /> 25-50%</label><br>
+<label><input type="radio" name="average"  ng-model="add.regData.average" value="50-75%" required />50-75%</label>
+
+
+<br>
+  <br>
+  <b>9.Are you interest in fresh home made condimends (Keeping healthin concern)?</b>
+  <br>
+  <label><input type="radio" name="interest" ng-model="add.regData.interest" value="Yes" required /> Yes</label><br>
+<label><input type="radio" name="interest"  ng-model="add.regData.interest" value="No" required />No</label>
+  <br>
+  <br>
+  <b>10.As an end customer, I prefer for quality than for price, how would you agree to this statement?</b><br>
+   <label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Strongly Agree" required />Strongly agree</label><br>
+    <label><input type="radio" name="agree" ng-model="add.regData.agree" value="Agree" required />Agree</label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="None" required />None</label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Disagree" required />Disagree</label>
+
+<br><br>
+<b>11.Are you a Vegetarian or Non-Vegetarian?</b><br>
+<label><input type="radio" name="veg_nonveg"  ng-model="add.regData.veg_nonveg" value="Vegetarian" required />Vegetarian</label><br>
+    <label><input type="radio" name="veg_nonveg" ng-model="add.regData.veg_nonveg" value="Non-Vegitarian" required />Non-Vegitarian</label>
+
+<br><br>
+<b>12.Would you like to have special Hydrabad-Non veg items, from Hydrabad to be availed in Raichur?</b><br>
+ 
+
+<label><input type="radio" name="special_Hyd"  ng-model="add.regData.special_Hyd" value="Yes" required />Yes</label><br>
+<label><input type="radio" name="special_Hyd"  ng-model="add.regData.special_Hyd" value="No" required />No</label>
+<br><br>
+<b>13.Which would be your favourite hotel in Hydrabad for Non-veg food?<br></b>
+
+<label><input type="radio" name="favourite"  ng-model="add.regData.favourite" value="Paradise" required />Paradise</label><br>
+    <label><input type="radio" name="favourite" ng-model="add.regData.favourite" value="Bawarchi" required /> Bawarchi </label><br>
+<label><input type="radio" name="favourite"  ng-model="add.regData.favourite" value="Hydrabad House" required />Hydrabad House</label><br>
+<label><input type="radio" name="favourite"  ng-model="add.regData.favourite"  value="Others specify" required /> Others specify</label><br>
+
+
+<br> 
+<b>14.If Special Non-veg items from Hydrabad would be availed in Raichur, than at what intervals would you prefer?<br></b>
+<label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" value="Weekly once" required />Weekly once</label><br>
+    <label><input type="radio" name="availed_in_Raichur" ng-model="add.regData.availed_in_Raichur" value="Weekly twice" required /> Weekly twice </label><br>
+<label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" value="Every two weeks" required />Every two weeks</label><br>
+<label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" value="Others" required />Others</label><br>
+
+
+
+
+<br>
+  <label>15.It is Ok with you to pay delivery charges for Hydrabad Special Non-veg items,made avilable in Raichur?</label>
+  <br>
+
+ <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="Yes" required />Yes</label><br>
+   <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="No" required />No</label><br>
+   <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="Per order basis" required />Per order basis</label><br>
+  
+  <br>
+ <center><button class="btn btn-primary" type="submit">Submit</button></center> 
+</form>
+<br>
+
+<br>
+<div class="row show-hide-message" ng-show="add.successMsg ">
+<div class="alert alert-success">{{ add.successMsg }}</div>
+  
+</div>
+<br>
+<div class="row show-hide-message" ng-show="add.errorMsg">
+<div class="alert alert-danger">{{ add.errorMsg}}</div>
+
+  
+</div>
+</div>
+</div>
+ <div class="col-md-2">
+ </div>
+ </div>
+ </div>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
                        <br>
 <div class="jumbotron">
 
