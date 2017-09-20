@@ -5,41 +5,42 @@ var server= require('http');
 var jwt=require('jsonwebtoken');
 var json2csv = require('json2csv');
 var fs1 = require('fs');
-var fieldNames = [   'Name',
-					 'Gender',
-					 'Age',
-					 'Monthly Income',
-					 'How often do you eat fruits and berries or drinking fruit juice?',
-					 'Approximately how many portions of fresh fruit and vegetables do you eat each day?',
-					 'On average, what portion of your weekly food budget is spent on fresh fruits and vegetables?',
-					 'Where do you buy most of your fresh fruits and vegetables?',
-					 'Please select the top 3 factors from the list below that motivate you to purchase fresh local fruits?',
-					 'As an end consumer I, prefer for quality than for price, how would u agree to this statement?',
-					 'Which of the following form of Pomegranate offer you the better benefits as a consumer?',
-					 'Which type of package you prefer the most?',
-					 'Rank the following according to your taste and preference',
-					 'Any suggestions for the improvement of the product',
-					 'Address'
+var fieldNames = [   '1.Are you aware of Online Grocery Market?',
+					 '2.what is your opinion on free Door Delivery?',
+					 '3.Would you like to prefer such kind of service / give a chance to such kind of service?',
+					 '4.How much do you spend monthly Grocery?',
+					 '5.How many times would you like to recieve such service in a month ?',
+					 '6.What is your opinion on farm fresh Fruits and Vegetables door delivery?',
+					 '7.How often do you buy fruits and vegetables?',
+					 '8.On average, what portion of your weekly food budget is spent on flesh fruits and vegetables?',
+					 '9.Are you interest in fresh home made condimends (Keeping healthin concern)',
+					 '10.As an end customer, I prefer for quality than for price, how would you agree to this statement?',
+					 '11.Are you a Vegetarian or Non-Vegetarian?',
+					 '12.Would you like to have special Hydrabad-Non veg items, from Hydrabad to be availed in Raichur?',
+					 '13.Which would be your favourite hotel in Hydrabad for Non-veg food?',
+					 '14.If Special Non-veg items from Hydrabad would be availed in Raichur, than at what intervals would you prefer?',
+					 '15.It is Ok with you to pay delivery charges for Hydrabad Special Non-veg items,made avilable in Raichur?'
 
 					 ];
 
 //var mongoXlsx = require('mongo-xlsx');
-var fields = [  'Name', 
-				'gender', 
-				'age',
-				'income',
-				'eatAndDrink',
-				'eatEachDay',
-				'foodBudget',
-				'buyPlace',
-				'importance',
+var fields = [  'aware', 
+				'opinion', 
+				'prefer',
+				'spend',
+				'recieve',
+				'farmfresh',
+				'buy',
+				'average',
+				'interest',
 				'agree',
-				'betterBenifits',
-				'package',
-				'preference',
-				'suggestions',
-				'address'
+				'veg_nonveg',
+				'special_Hyd',
+				'favourite',
+				'availed_in_Raichur',
+				'delivery'
 				];
+
 
 var fs = require('file-system');
 var secret ='kiran';
@@ -224,22 +225,22 @@ router.post('/surveydata',function(req,res)
 	{
 		
 		var surveytable=new Survey();
-		surveytable.Name=req.body.name;
-		surveytable.age=req.body.age;
-		surveytable.address=req.body.address;
-		surveytable.gender=req.body.gender;
-		surveytable.income=req.body.income;
-		surveytable.eatAndDrink=req.body.eatAndDrink;
-		surveytable.eatEachDay=req.body.eatEachDay;
-		surveytable.foodBudget=req.body.foodBudget;
-		surveytable.buyPlace=req.body.buyPlace;
+		surveytable.aware=req.body.aware;
+		surveytable.opinion=req.body.opinion;
+		surveytable.prefer=req.body.prefer;
+		surveytable.spend=req.body.spend;
+		surveytable.recieve=req.body.recieve;
+		surveytable.farmfresh=req.body.farmfresh;
+		surveytable.buy=req.body.buy;
+		surveytable.average=req.body.average;
+		surveytable.interest=req.body.interest;
 		surveytable.agree=req.body.agree;
-		surveytable.importance=req.body.importance;
-		surveytable.betterBenifits=req.body.betterBenifits;
-		surveytable.package=req.body.package;
-		surveytable.preference=req.body.preference;
-		surveytable.suggestions=req.body.suggestions;
-		if(req.body.suggestions==null||req.body.suggestions==''||req.body.preference==null||req.body.preference==''||req.body.package==null||req.body.package==''||req.body.betterBenifits==null||req.body.betterBenifits==''||req.body.agree==null||req.body.agree==''||req.body.buyPlace==null||req.body.buyPlace==''||req.body.foodBudget==null||req.body.foodBudget==''||req.body.name==null||req.body.name==''||req.body.age==null||req.body.age==''||req.body.address==null||req.body.address==''||req.body.gender==null||req.body.gender==''||req.body.income==null||req.body.income==''||req.body.eatAndDrink==null||req.body.eatAndDrink==''||req.body.eatEachDay==null||req.body.eatEachDay=='')
+		surveytable.veg_nonveg=req.body.veg_nonveg;
+		surveytable.special_Hyd=req.body.special_Hyd;
+		surveytable.favourite=req.body.favourite;
+		surveytable.availed_in_Raichur=req.body.availed_in_Raichur;
+		surveytable.delivery=req.body.delivery;
+		if(req.body.aware==null||req.body.aware==''||req.body.delivery==null||req.body.delivery==''||req.body.availed_in_Raichur==null||req.body.availed_in_Raichur==''||req.body.favourite==null||req.body.favourite==''||req.body.special_Hyd==null||req.body.special_Hyd==''||req.body.veg_nonveg==null||req.body.veg_nonveg==''||req.body.agree==null||req.body.agree==''||req.body.interest==null||req.body.interest==''||req.body.average==null||req.body.average==''||req.body.buy==null||req.body.buy==''||req.body.farmfresh==null||req.body.farmfresh==''||req.body.recieve==null||req.body.recieve==''||req.body.spend==null||req.body.spend==''||req.body.prefer==null||req.body.prefer==''||req.body.opinion==null||req.body.opinion=='')
 		{
 			res.json({success:false,message:'Ensure all fields  were provided'});
 
@@ -257,6 +258,7 @@ router.post('/surveydata',function(req,res)
 		}
 		
 	});
+
 
 		
 router.get('/surveydata',function(req,res)
@@ -288,10 +290,11 @@ router.get('/count',function(req,res)
 		 });
 
 });
+	
 router.get('/downloads', function(req, res){
 var path = require('path');
 var mime = require('mime');
-  var file = "D:\\surveyapp\\file.csv";
+  var file = "D:\\updatesurveapp\\file.csv";
 
   var filename = path.basename(file);
   var mimetype = mime.lookup(file);
@@ -300,7 +303,7 @@ var mime = require('mime');
   res.setHeader('Content-type', mimetype);
 
 
-  var filestream = fs.createReadStream("D:\\surveyapp\\file.csv");
+  var filestream = fs.createReadStream("D:\\updatesurveapp\\file.csv");
   filestream.pipe(res);
 });
 
