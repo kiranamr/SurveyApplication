@@ -2,21 +2,22 @@ var mongoose=require('mongoose');
 var Schema=mongoose.Schema;
 var bcrypt=require('bcrypt-nodejs');
 var SurveySchema=new Schema({
-	Name:{type:String,required:true},
-	age:{type:String,required:true},
-	address:{type:String,required:true},
-	gender:{type:String,required:true},
-	income:{type:String,required:true},
-	eatAndDrink:{type:String,required:true},
-	eatEachDay:{type:String,required:true},
-	foodBudget:{type:String,required:true},
-	buyPlace:{type:String,required:true},
+	aware:{type:String,required:true},
+	opinion:{type:String,required:true},
+	prefer:{type:String,required:true},
+	spend:{type:String,required:true},
+	recieve:{type:String,required:true},
+	farmfresh:{type:String,required:true},
+	buy:{type:String,required:true},
+	average:{type:String,required:true},
+	interest:{type:String,required:true},
 	agree:{type:String,required:true},
-	importance:{type:Array,required:true},
-	betterBenifits:{type:String,required:true},
-	package:{type:String,required:true},
-	preference:{type:String,required:true},
-	suggestions:{type:String,required:true}
+	veg_nonveg:{type:String,required:true},
+	special_Hyd:{type:String,required:true},
+	favourite:{type:String,required:true},
+	availed_in_Raichur:{type:String,required:true},
+	delivery:{type:String,required:true}
+	
 	
 	
 
