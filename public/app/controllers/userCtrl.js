@@ -18,7 +18,7 @@ angular.module('userControllers',['userServices'])
          {
          	app.loading=false;
               app.successMsg=data.data.message+'...Redirecting';
-              $timeout(function(){$location.path('/login');
+              $timeout(function(){$location.path('/admin');
                },2000);
 
          } 

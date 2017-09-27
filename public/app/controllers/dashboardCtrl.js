@@ -3,18 +3,23 @@ angular.module('dashboardControllers',[])
 {
   $scope.surveys=[];
    $scope.surveys1=[];
-      $scope.selectDays = ['Support local farmers',
-'Fewer transport miles',
-'Support local economy',
-'Food is fresher/tastier',
-'Food is better quality',
-'Food is cheaper',
-'You know where the food comes from',
-'Food has fewer additives',
-'Food is healthier'
-];
+  
+
+    $scope.IsVisibleHotel = false;
+            $scope.ShowPassport = function (value) {
+                //If DIV is visible it will be hidden and vice versa.
+                $scope.IsVisibleHotel = value =="others";
+
+            }
+            $scope.IsVisibleSpecial = false;
+            $scope.ShowPassportSpecial = function (value1) {
+                //If DIV is visible it will be hidden and vice versa.
+                $scope.IsVisibleSpecial = value1 =="otherspecial";
+
+            }
+    
   console.log($scope.surveys);
-	   var app=this;
+     var app=this;
      app.loading=true;
     app.errorMsg=false;
     app.successMsg=false;
@@ -33,23 +38,23 @@ angular.module('dashboardControllers',[])
          console.log(data.data.message);
          if(data.data.success)
          {
-          app.loading=false;
-              app.successMsg=data.data.message+'...Redirecting';
-              $timeout(function(){$location.path('/dashboard');
+          //app.loading=false;
+             // app.successMsg=alert(data.data.message); 
+              $timeout(function(){$location.path('/success');
                window.location.reload(true);
             
 
-                app.successMsg=false;
-                },3000);
+                
+                },2000);
 
          } 
          else 
          {
           
-             app.loading=false;
-               app.errorMsg=data.data.message;
-                 $timeout(function(){$location.path('/dashboard');
-               window.location.reload(true);
+             //app.loading=false;
+               app.errorMsg=alert(data.data.message);
+                 $timeout(function(){$location.path('/survey');
+              
             
 
                 app.errorMsg=false;

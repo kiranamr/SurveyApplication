@@ -9,8 +9,12 @@ $routeProvider
 	templateUrl:'app/views/pages/aboutus.html'
 })
 
+.when('/success',{
+	templateUrl:'app/views/pages/sucess.html'
+})
 
-.when('/dashboard',{
+
+.when('/survey',{
 	templateUrl:'app/views/pages/dashboard.html',
 	controller:'dashboardCtrl',
 	controllerAs:'add'
@@ -24,13 +28,13 @@ $routeProvider
 	controller:'regCtrl',
 	controllerAs:'register'
 })
-.when('/login',{
+.when('/admin',{
 	templateUrl:'app/views/pages/users/login.html',
 	controller:'mainCtrl',
 	controllerAs:'login'
 
 })
-.when('/viewpage',{
+.when('/viewSurveyReport',{
 	templateUrl:'app/views/pages/viewpage.html',
 	controller:'viewpageCtrl',
 	controllerAs:'viewpage'

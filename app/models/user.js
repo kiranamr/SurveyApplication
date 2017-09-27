@@ -14,7 +14,7 @@ var emailValidator=[
  	message:'Email should be betweeen charactors '
  })
 ];
-var UserSchema=new Schema({
+var UserValueSchema=new Schema({
 	firstname:{type:String,required:true},
     lastname:{type:String,required:true},
 	username:{type:String,lowercase:true,required:true,unique:true},
@@ -23,7 +23,7 @@ var UserSchema=new Schema({
    mobile:{type:String,required:true,unique:true}
 }); 
 
-UserSchema.pre('save',function(next)
+UserValueSchema.pre('save',function(next)
 	{
 var user=this;
 bcrypt.hash(user.password,null,null,function(err,hash)
@@ -33,10 +33,10 @@ user.password=hash;
 next();
 });
 	});
-UserSchema.methods.comparePassword=function(password)
+UserValueSchema.methods.comparePassword=function(password)
 {
   return bcrypt.compareSync(password,this.password);
 };
 
-module.exports=mongoose.model('User',UserSchema);
+module.exports=mongoose.model('User',UserValueSchema);
 

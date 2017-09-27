@@ -47,17 +47,17 @@ angular.module('mainControllers',['authServices'])
          console.log(data.data.message);
          if(data.data.success)
          {
-         	app.loading=false;
-              app.successMsg=data.data.message+'...Redirecting';
-              $timeout(function(){$location.path('/viewpage');
+         	
+              app.successMsg=alert(data.data.message);
+              $timeout(function(){$location.path('/viewSurveyReport');
               window.location.reload(true);
               	app.successMsg=false;},3000);
          } 
          else
          {
-         	   app.loading=false;
-               app.errorMsg=data.data.message;
-               $timeout(function(){$location.path('/login');
+         	   
+               app.errorMsg=alert(data.data.message);
+               $timeout(function(){$location.path('/admin');
                window.location.reload(true);
          	  
 

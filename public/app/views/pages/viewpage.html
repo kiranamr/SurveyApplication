@@ -11,24 +11,32 @@
                                         <thead>
                                           <tr >
                                                  <th>Sl No</th>
+                                                 <th>Name</th>
+                                                 <th>Phone</th>
+                                                 <th>Email</th>
+                                                 <th>Address</th>
+                                                 <th>Pincode</th>
                                                 <th>1.Are you aware of Online Grocery Market?</th>
-                                                <th>2.what is your opinion on free Door Delivery?</th>
+                                                <th>2.what is your opinion on free door delivery?</th>
                                                 <th>3.Would you like to prefer such kind of service / give a chance to such kind of service? </th>
-                                                <th>4.How much do you spend monthly Grocery?</th>
+                                                <th>4.How much do you spend monthly grocery?</th>
                                                 <th>5.How many times would you like to recieve such service in a month ? </th>
-                                                <th>6.What is your opinion on farm fresh Fruits and Vegetables door delivery?
+                                                <th>6.What is your opinion on farm fresh fruits and vegetables door delivery?
 													</th>
 													<th>7.How often do you buy fruits and vegetables?'</th>
-													<th>8.On average, what portion of your weekly food budget is spent on flesh fruits and vegetables?</th>
+													<th>8.On average, what portion of your weekly food budget is spent on fresh fruits and vegetables?</th>
 													<th>9.Are you interest in fresh home made condimends (Keeping healthin concern)</th>
 													<th>10.As an end customer, I prefer for quality than for price, how would you agree to this statement?
 </th>
 <th>11.Are you a Vegetarian or Non-Vegetarian?</th>
-<th>12.Would you like to have special Hydrabad-Non veg items, from Hydrabad to be availed in Raichur?</th>
-<th>13.Which would be your favourite hotel in Hydrabad for Non-veg food?</th>
+<th>12.Would you like to have special Hyderabad-Non veg items, from Hydrabad to be availed in Raichur?</th>
+<th>13.Which would be your favourite hotel in Hyderabad for Non-veg food?</th>
 
-<th>14.If Special Non-veg items from Hydrabad would be availed in Raichur, than at what intervals would you prefer?</th>
-<th> 15.It is Ok with you to pay delivery charges for Hydrabad Special Non-veg items,made avilable in Raichur? </th>
+<th>14.If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?</th>
+<th> 15.It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur? </th>
+<th>16.Are you aware of organic/pesticide free food product?</th>
+<th>17.Would you like to buy organic food products, if availed at your doorstep?</th>
+<th>Student code</th>
                                                
                                           </tr>
                                         </thead>
@@ -36,6 +44,11 @@
                                           <tbody>                         
                                            <tr style="width: 200px"  ng-repeat="survey in surveys" > 
                                               <td>{{$index+1}}</td>
+                                              <td>{{survey.name}}</td>
+                                              <td>{{survey.phone}}</td>
+                                              <td>{{survey.email}}</td>
+                                              <td>{{survey.address}}</td>
+                                              <td>{{survey.pincode}}</td>
                                               <td>{{survey.aware}}</td>
                                               <td>{{survey.opinion}}</td>
                                               <td>{{survey.prefer}}</td>
@@ -52,6 +65,9 @@
                                                        <td>{{survey.favourite}}</td>
                                                         <td>{{survey.availed_in_Raichur}}</td>
                                                         <td>{{survey.delivery}}</td>
+                                                        <td>{{survey.organic}}</td>
+                                                        <td>{{survey.doorstep}}</td>
+                                                        <td>{{survey.studentcode}}</td>
                                                         
                                              
                                              
@@ -62,7 +78,7 @@
                                      <br>
                                      <br>
 
-                                   <center> <a href="http://localhost:3000/api/downloads"><h4>download this page here</h4> </a></center> 
+                                  
                                   </div>
                                 </div>
                             </div>
