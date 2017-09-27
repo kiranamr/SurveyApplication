@@ -6,20 +6,22 @@ var jwt=require('jsonwebtoken');
 var json2csv = require('json2csv');
 var fs1 = require('fs');
 var fieldNames = [   '1.Are you aware of Online Grocery Market?',
-					 '2.what is your opinion on free Door Delivery?',
+					 '2.what is your opinion on free door delivery?',
 					 '3.Would you like to prefer such kind of service / give a chance to such kind of service?',
-					 '4.How much do you spend monthly Grocery?',
+					 '4.How much do you spend monthly grocery?',
 					 '5.How many times would you like to recieve such service in a month ?',
-					 '6.What is your opinion on farm fresh Fruits and Vegetables door delivery?',
+					 '6.What is your opinion on farm fresh fruits and vegetables door delivery?',
 					 '7.How often do you buy fruits and vegetables?',
-					 '8.On average, what portion of your weekly food budget is spent on flesh fruits and vegetables?',
-					 '9.Are you interest in fresh home made condimends (Keeping healthin concern)',
+					 '8.On average, what portion of your weekly food budget is spent on fresh fruits and vegetables?',
+					 '9.Are you interest in fresh home made condimends (Keeping health in concern)',
 					 '10.As an end customer, I prefer for quality than for price, how would you agree to this statement?',
 					 '11.Are you a Vegetarian or Non-Vegetarian?',
-					 '12.Would you like to have special Hydrabad-Non veg items, from Hydrabad to be availed in Raichur?',
-					 '13.Which would be your favourite hotel in Hydrabad for Non-veg food?',
-					 '14.If Special Non-veg items from Hydrabad would be availed in Raichur, than at what intervals would you prefer?',
-					 '15.It is Ok with you to pay delivery charges for Hydrabad Special Non-veg items,made avilable in Raichur?'
+					 '12.Would you like to have special Hyderabad-Non veg items, from Hyderabad to be availed in Raichur?',
+					 '13.Which would be your favourite hotel in Hyderabad for Non-veg food?',
+					 '14.If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?',
+					 '15.It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur?',
+					 '16.Are you aware of organic/pesticide free food product?',
+					 '17.Would you like to buy organic food products, if availed at your doorstep?'
 
 					 ];
 
@@ -38,9 +40,10 @@ var fields = [  'aware',
 				'special_Hyd',
 				'favourite',
 				'availed_in_Raichur',
-				'delivery'
+				'delivery',
+				'organic',
+				'doorstep'
 				];
-
 
 var fs = require('file-system');
 var secret ='kiran';
@@ -142,25 +145,25 @@ router.post('/users',function(req,res)
 						}
 					}
 				    
-		else if(err)
-		{
-			if(err.code == 11000)
-			{
+		       	  else if(err)
+					{
+						if(err.code == 11000)
+						{
 				
 				
-				return	res.json({success:false, message:'username or email or phone number already exists  !!!'});
-				
+							return	res.json({success:false, message:'username or email or phone number already exists  !!!'});
+					
 			
 			
-		 	}			
-			else
-			{
-			return	res.json({success:false, message: err});
-			}
+		 				}			
+							else
+							{
+							return	res.json({success:false, message: err});
+							}
 			
-		}
+						}
 		
-		}
+					}
 		else
 		{
 	return	res.json({success:true, message:'user created !'});
@@ -187,7 +190,7 @@ router.post('/users',function(req,res)
     
      // Route to get all users for management page
     router.get('/management', function(req, res) {
-        User.find({}, function(err, users) {
+        User.find({}, function(err, uservalues) {
             if (err) {
               
                 res.json({ success: false, message: 'Something went wrong. This error has been logged and will be addressed by our staff. We apologize for this inconvenience!' });
@@ -221,10 +224,14 @@ router.post('/users',function(req,res)
         });
     });
 
-router.post('/surveydata',function(req,res)
+router.post('/surveysdata',function(req,res)
 	{
-		
 		var surveytable=new Survey();
+		surveytable.name=req.body.name;
+		surveytable.phone=req.body.phone;
+		surveytable.email=req.body.email;
+		surveytable.address=req.body.address;
+		surveytable.pincode=req.body.pincode;
 		surveytable.aware=req.body.aware;
 		surveytable.opinion=req.body.opinion;
 		surveytable.prefer=req.body.prefer;
@@ -240,28 +247,58 @@ router.post('/surveydata',function(req,res)
 		surveytable.favourite=req.body.favourite;
 		surveytable.availed_in_Raichur=req.body.availed_in_Raichur;
 		surveytable.delivery=req.body.delivery;
-		if(req.body.aware==null||req.body.aware==''||req.body.delivery==null||req.body.delivery==''||req.body.availed_in_Raichur==null||req.body.availed_in_Raichur==''||req.body.favourite==null||req.body.favourite==''||req.body.special_Hyd==null||req.body.special_Hyd==''||req.body.veg_nonveg==null||req.body.veg_nonveg==''||req.body.agree==null||req.body.agree==''||req.body.interest==null||req.body.interest==''||req.body.average==null||req.body.average==''||req.body.buy==null||req.body.buy==''||req.body.farmfresh==null||req.body.farmfresh==''||req.body.recieve==null||req.body.recieve==''||req.body.spend==null||req.body.spend==''||req.body.prefer==null||req.body.prefer==''||req.body.opinion==null||req.body.opinion=='')
+		surveytable.studentcode=req.body.studentcode;
+		surveytable.organic=req.body.organic;
+		surveytable.doorstep=req.body.doorstep;
+		if(req.body.doorstep==null||req.body.doorstep==''||req.body.organic==null||req.body.organic==''||req.body.name==null||req.body.name==''||req.body.phone==null||req.body.phone==''||req.body.aware==null||req.body.aware==''||req.body.delivery==null||req.body.delivery==''||req.body.availed_in_Raichur==null||req.body.availed_in_Raichur==''||req.body.favourite==null||req.body.favourite==''||req.body.special_Hyd==null||req.body.special_Hyd==''||req.body.veg_nonveg==null||req.body.veg_nonveg==''||req.body.agree==null||req.body.agree==''||req.body.interest==null||req.body.interest==''||req.body.average==null||req.body.average==''||req.body.buy==null||req.body.buy==''||req.body.farmfresh==null||req.body.farmfresh==''||req.body.recieve==null||req.body.recieve==''||req.body.spend==null||req.body.spend==''||req.body.prefer==null||req.body.prefer==''||req.body.opinion==null||req.body.opinion=='')
 		{
 			res.json({success:false,message:'Ensure all fields  were provided'});
 
 		}
 		else
-		{
+		{ 
+               
+  
+				 surveytable.save(function(err)
+               {	
+					
+					 if(err)
+						{
+				               if(err.code == 11000)
+				               {
+				               	console.log(err.errmsg);
+				               	return	res.json({success:false, message:'Phone number already exists  !!!'});
+				               }
+				
+							
+					
+			
+			
+		 				}
+		 				else
+		 				{
+		 					 return	res.json({success:true, message:'survey created !'});
+		 				}
+					 
 
-			surveytable.save(function(err){
-		 if (err) throw err;
+					
+			
+			
+		});
+			}
 		
-		return res.json({success:true, message:'Survey data created !'});
-		
-	     
+				    
+	
 	    });
-		}
-		
-	});
+				    
+	
+	    
+			
+	                
+	
 
 
-		
-router.get('/surveydata',function(req,res)
+router.get('/surveysdata',function(req,res)
 {
 // get all the users
 console.log('I recived a get request');
@@ -270,7 +307,7 @@ Survey.find(function(err, surveys) {
 var csv = json2csv({ data: surveys, fields: fields ,fieldNames: fieldNames});
   	res.json(surveys);
         
-		fs1.writeFile('file.csv', csv, function(err) {
+		fs1.writeFile('public/file.csv', csv, function(err) {
   if (err) throw err;
   console.log('file saved');
 });
@@ -290,7 +327,6 @@ router.get('/count',function(req,res)
 		 });
 
 });
-	
 router.get('/downloads', function(req, res){
 var path = require('path');
 var mime = require('mime');
@@ -362,22 +398,6 @@ User.findOne({ username:req.body.username}).select('firstname lastname  username
 });
 });
 
-
-  router.get('/downloads', function(req, res){
-var path = require('path');
-var mime = require('mime');
-  var file = "G:\\loginapp\\downloads\\data.xlsx";
-
-  var filename = path.basename(file);
-  var mimetype = mime.lookup(file);
-
-  res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-  res.setHeader('Content-type', mimetype);
-
-
-  var filestream = fs.createReadStream("G:\\loginapp\\mongoXlsx");
-  filestream.pipe(res);
-});
 
  router.use(function(req,res,next)
   {
